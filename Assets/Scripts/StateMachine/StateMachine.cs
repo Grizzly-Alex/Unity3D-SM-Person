@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
-    private State currentState;
+    private IState currentState;
 
-    public void SwitchState(State newState)
+    public void SwitchState(IState newState)
     {
         currentState?.Exit();
         currentState = newState;
