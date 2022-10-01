@@ -1405,10 +1405,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7304562661294116787, guid: 9d1615e4166bbca4bb0fcc6c2b563c78, type: 3}
-      propertyPath: <FreeLookMovementSpeed>k__BackingField
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1615e4166bbca4bb0fcc6c2b563c78, type: 3}
