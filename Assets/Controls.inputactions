@@ -42,18 +42,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Target",
+                    "name": "Targeting",
                     "type": "Button",
                     "id": "ff9af15c-f28d-412f-b543-3e87e4ec7781",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "c0a1ee8e-3bb6-4199-b8e1-97f00a5d1d33",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -255,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Target",
+                    "action": "Targeting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -266,29 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Target",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b2b21bce-e932-4303-9415-4f2e9f3ff9ce",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c10ca7ed-f376-455a-ba51-257e1dd28b1b",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Cancel",
+                    "action": "Targeting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

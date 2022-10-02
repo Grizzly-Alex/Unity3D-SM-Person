@@ -64,18 +64,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Target"",
+                    ""name"": ""Targeting"",
                     ""type"": ""Button"",
                     ""id"": ""ff9af15c-f28d-412f-b543-3e87e4ec7781"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""c0a1ee8e-3bb6-4199-b8e1-97f00a5d1d33"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -277,7 +268,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Target"",
+                    ""action"": ""Targeting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -288,29 +279,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Target"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b2b21bce-e932-4303-9415-4f2e9f3ff9ce"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c10ca7ed-f376-455a-ba51-257e1dd28b1b"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Cancel"",
+                    ""action"": ""Targeting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -353,8 +322,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Player_Doudge = m_Player.FindAction("Doudge", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
-        m_Player_Cancel = m_Player.FindAction("Cancel", throwIfNotFound: true);
+        m_Player_Targeting = m_Player.FindAction("Targeting", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -418,8 +386,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Doudge;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Target;
-    private readonly InputAction m_Player_Cancel;
+    private readonly InputAction m_Player_Targeting;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -428,8 +395,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Doudge => m_Wrapper.m_Player_Doudge;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Target => m_Wrapper.m_Player_Target;
-        public InputAction @Cancel => m_Wrapper.m_Player_Cancel;
+        public InputAction @Targeting => m_Wrapper.m_Player_Targeting;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -451,12 +417,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Target.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
-                @Target.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
-                @Target.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
-                @Cancel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
-                @Cancel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
-                @Cancel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
+                @Targeting.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTargeting;
+                @Targeting.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTargeting;
+                @Targeting.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTargeting;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -473,12 +436,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Target.started += instance.OnTarget;
-                @Target.performed += instance.OnTarget;
-                @Target.canceled += instance.OnTarget;
-                @Cancel.started += instance.OnCancel;
-                @Cancel.performed += instance.OnCancel;
-                @Cancel.canceled += instance.OnCancel;
+                @Targeting.started += instance.OnTargeting;
+                @Targeting.performed += instance.OnTargeting;
+                @Targeting.canceled += instance.OnTargeting;
             }
         }
     }
@@ -507,7 +467,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnDoudge(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnTarget(InputAction.CallbackContext context);
-        void OnCancel(InputAction.CallbackContext context);
+        void OnTargeting(InputAction.CallbackContext context);
     }
 }
