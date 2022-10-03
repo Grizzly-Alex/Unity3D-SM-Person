@@ -26,7 +26,7 @@ public class PlayerFreeLookState : PlayerBaseState
                
         if(stateMachine.InputReader.MovementValue != Vector2.zero)
         {
-            stateMachine.Controller.Move(movement * stateMachine.FreeLookMovementSpeed * deltaTime);
+            Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
             FaceMovementDirection(movement, deltaTime);
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
         }

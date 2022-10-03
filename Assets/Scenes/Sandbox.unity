@@ -1166,11 +1166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 905110656966791089, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00003419482
+      value: -0.000034229462
       objectReference: {fileID: 0}
     - target: {fileID: 905110656966791089, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000016157923
+      value: 0.0000016174293
       objectReference: {fileID: 0}
     - target: {fileID: 905110657546549098, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_RootOrder
@@ -1282,7 +1282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502829939934235012, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00000013765117
+      value: 0.00000013765107
       objectReference: {fileID: 0}
     - target: {fileID: 6502829939934235012, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1291,6 +1291,10 @@ PrefabInstance:
     - target: {fileID: 6502829939934235012, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4.2720017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624766048478406889, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
+      propertyPath: <FreeLookMovementSpeed>k__BackingField
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7660543048247010253, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_Priority
@@ -1362,11 +1366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9038125633646811969, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016930294
+      value: -0.000000016930281
       objectReference: {fileID: 0}
     - target: {fileID: 9038125633646811969, guid: 47d55930f3bf6a14f986d2350ada90a3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003070049
+      value: 0.0000000030700473
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
