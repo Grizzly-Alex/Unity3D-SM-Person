@@ -15,6 +15,11 @@ public abstract class PlayerBaseState : IState
     public abstract void Tick(float deltaTime);
     public abstract void Exit();
 
+    protected void Move(float deltaTime)
+    {
+        Move(Vector3.zero, deltaTime);
+    }  
+
     protected void Move(Vector3 motion, float deltaTime)
     {
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);

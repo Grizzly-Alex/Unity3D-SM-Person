@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -7,8 +8,15 @@ public class Targeter : MonoBehaviour
 {
     [SerializeField] private CinemachineTargetGroup cineTargetGroup;
 
+    private Camera mainCamera;
+
     private List<Target> targets = new();
     public Target CurrentTarget { get; private set; }
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -31,16 +39,43 @@ public class Targeter : MonoBehaviour
     {
         if(targets.Count != 0)
         {
-            CurrentTarget = targets[0];
-            cineTargetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
+            Target closesTarget = null;
+            float closestTargetDistance = Mathf.Infinity;
 
-            return true;
+
+
+            foreach (Target target in targets)
+            {
+                Vector2 viewPos = mainCamera.WorldToViewportPoint(target.transform.position);
+
+                if(viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1)
+                {
+                    Vector2 toCenter = viewPos = new Vector2(0.5f, 0.5f);
+
+                    if(toCenter.sqrMagnitude < closestTargetDistance)
+                    {
+                        closesTarget = target;
+                        closestTargetDistance = toCenter.sqrMagnitude;
+                    }
+                }              
+            }
+
+            if(closesTarget == null)            
+            { 
+                return false;
+            }
+            else
+            {
+                CurrentTarget = closesTarget;
+                cineTargetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
+
+                return true;
+            }            
         }
         else
         {
             return false;
-        }
-        
+        }        
     }
 
     public void Cancel()
@@ -50,7 +85,6 @@ public class Targeter : MonoBehaviour
             cineTargetGroup.RemoveMember(CurrentTarget.transform);
             CurrentTarget = null;
         }
-
     } 
 
     private void RemoveTarget(Target target)
