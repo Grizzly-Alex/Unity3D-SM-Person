@@ -1480,6 +1480,52 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.57295895, y: 0.5037055, z: -0.112588495}
     m_Extent: {x: 0.22419465, y: 0.06168276, z: 0.33789957}
   m_DirtyAABB: 0
+--- !u!1 &4746524846455102333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35187503094209570}
+  - component: {fileID: 6002436264383658488}
+  m_Layer: 0
+  m_Name: WeaponLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &35187503094209570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746524846455102333}
+  m_LocalRotation: {x: -0.0036964358, y: 0.030107327, z: -0.12181028, w: 0.9920898}
+  m_LocalPosition: {x: -0.294, y: 0.156, z: 0.049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5617715118583988507}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 3.476, z: -14}
+--- !u!136 &6002436264383658488
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746524846455102333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 1.1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4754359773736030824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1891,7 @@ GameObject:
   - component: {fileID: 551115851199060991}
   - component: {fileID: 240409505824294394}
   - component: {fileID: 5232797353691432346}
+  - component: {fileID: 3837674482140636344}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1977,6 +2024,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 240409505824294394}
   drag: 0.1
+--- !u!114 &3837674482140636344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377914255415214978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423574290de492d458712e1254bfa13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLogic: {fileID: 4746524846455102333}
 --- !u!1 &6498096201246283686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2740,7 @@ Transform:
   - {fileID: 3084957316892498399}
   - {fileID: 2412134845317622317}
   - {fileID: 3105223654244769077}
+  - {fileID: 35187503094209570}
   m_Father: {fileID: 8633629191952255867}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
