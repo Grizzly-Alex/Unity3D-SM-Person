@@ -12,7 +12,6 @@ public class WeaponHandler : MonoBehaviour
 
     public void DisableWeapon()
     {
-        weaponLogic.SetActive(false);
+        weaponLogic.SetActive(false);     
     }
-
 }
