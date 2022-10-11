@@ -26,11 +26,11 @@ public class EnemyIdleState : EnemyBaseState
 
         if(IsInChaseRange())
         {
-            //Transition to chasing state
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
         else
         {
-            stateMachine.Animator.SetFloat(SpeedHash, 0, AnimatorDampTime, deltaTime); 
+            stateMachine.Animator.SetFloat(SpeedHash, 0f, AnimatorDampTime, deltaTime); 
 
         }             
     }
