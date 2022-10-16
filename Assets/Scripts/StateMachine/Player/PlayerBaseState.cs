@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerBaseState : IState
+public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
 
@@ -10,10 +10,6 @@ public abstract class PlayerBaseState : IState
     {
         this.stateMachine = stateMachine;
     }
-
-    public abstract void Enter();
-    public abstract void Tick(float deltaTime);
-    public abstract void Exit();
 
     protected void Move(float deltaTime)
     {

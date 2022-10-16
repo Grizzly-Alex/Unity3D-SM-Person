@@ -36,7 +36,6 @@ public class PlayerTargetingState : PlayerBaseState
             UpdateAnimator(deltaTime);
             FaceTarget();
         }
-
     }
 
     public override void Exit()
@@ -80,7 +79,6 @@ public class PlayerTargetingState : PlayerBaseState
         {
             float value = stateMachine.InputReader.MovementValue.x > 0 ? 1f : -1f;
             stateMachine.Animator.SetFloat(TargetingRightHash, value,  0.1f, deltaTime);
-        }
-        
+        }       
     }
 }

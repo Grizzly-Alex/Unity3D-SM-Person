@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyBaseState : IState
+public abstract class EnemyBaseState : State
 {
     protected EnemyStateMachine stateMachine;
 
@@ -10,10 +10,6 @@ public abstract class EnemyBaseState : IState
     {
         this.stateMachine = stateMachine;
     }
-
-    public abstract void Enter();
-    public abstract void Exit();
-    public abstract void Tick(float deltaTime);
 
     protected bool IsInChaseRange()
     {

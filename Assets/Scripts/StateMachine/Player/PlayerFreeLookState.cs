@@ -23,21 +23,25 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        Vector3 movement = CalculateMovement();
         if(stateMachine.InputReader.IsAttacking)
         {
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-        }               
-        else if(stateMachine.InputReader.MovementValue != Vector2.zero)
-        {
+        }  
+        else
+        {        
+            Vector3 movement = CalculateMovement();
             Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
             FaceMovementDirection(movement, deltaTime);
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-        }
-        else
-        {
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
-        }       
+
+            if(stateMachine.InputReader.MovementValue != Vector2.zero)
+            {
+                stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+            }
+            else
+            {
+                stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
+            }  
+        }                  
     }
 
     public override void Exit()
