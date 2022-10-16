@@ -19,11 +19,13 @@ public class PlayerImpactState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        Move(deltaTime);
+
         duration -= deltaTime;
 
         if (duration <= 0f)
         {
-            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            ReturnToLokomotion();
         }       
     }
 
