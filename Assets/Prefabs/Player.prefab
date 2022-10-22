@@ -2526,7 +2526,7 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 4083779249432982872}
   <Ragdoll>k__BackingField: {fileID: 2153626466808256156}
   <FreeLookMovementSpeed>k__BackingField: 6
-  <TargetingMovementSpeed>k__BackingField: 5
+  <TargetingMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 7
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack1

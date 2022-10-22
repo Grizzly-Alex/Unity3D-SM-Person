@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public bool IsAttacking { get; private set; }
+    public bool IsBlocking { get; private set; }
     public Vector2 MovementValue { get; private set; }
     public event Action DoudgeEvent;
     public event Action JumpEvent;
@@ -27,7 +28,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             JumpEvent?.Invoke();
         }
@@ -36,7 +37,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnDoudge(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             DoudgeEvent?.Invoke();
         }
@@ -54,7 +55,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnTargeting(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             TargetingEvent?.Invoke();
         }
@@ -62,13 +63,25 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             IsAttacking = true;
         }
         else if (context.canceled)
         {
             IsAttacking = false;
+        }
+    }
+
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            IsBlocking = true;
+        }
+        else if (context.canceled)
+        {
+            IsBlocking = false;
         }
     }
 }
