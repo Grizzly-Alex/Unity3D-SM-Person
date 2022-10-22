@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Doudge",
+                    "name": "Dodge",
                     "type": "Button",
                     "id": "0b3bd16d-d89a-4dcc-8d16-a13ec294cc58",
                     "expectedControlType": "Button",
@@ -99,7 +99,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "Doudge",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -110,7 +110,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Doudge",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

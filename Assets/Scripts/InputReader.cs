@@ -9,7 +9,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public bool IsAttacking { get; private set; }
     public bool IsBlocking { get; private set; }
     public Vector2 MovementValue { get; private set; }
-    public event Action DoudgeEvent;
+    public event Action DodgeEvent;
     public event Action JumpEvent;
     public event Action TargetingEvent;
     private Controls controls;
@@ -35,11 +35,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     }
 
-    public void OnDoudge(InputAction.CallbackContext context)
+    public void OnDodge(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            DoudgeEvent?.Invoke();
+            DodgeEvent?.Invoke();
         }
     }
 
