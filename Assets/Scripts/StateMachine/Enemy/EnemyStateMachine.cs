@@ -30,7 +30,6 @@ public class EnemyStateMachine : StateMachine
         SwitchState(new EnemyIdleState(this));
     }
 
-
     private void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;

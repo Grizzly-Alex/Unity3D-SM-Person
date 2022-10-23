@@ -44,7 +44,6 @@ public class EnemyChasingState : EnemyBaseState
         stateMachine.Agent.velocity = Vector3.zero;
     }
 
-
     private bool IsInAttackRange()
     {
         if(stateMachine.Player.IsDead) { return false; }
